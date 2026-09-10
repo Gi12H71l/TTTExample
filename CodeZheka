@@ -16,7 +16,8 @@ int main() {
         i=(n-1)/3;
         j=(n-1)%3;
 
-        if(n<1n>9b[i][j]=='X'||b[i][j]=='O') {
+        // ИСПРАВЛЕННАЯ СТРОКА:
+        if(n < 1 || n > 9 || b[i][j] == 'X' || b[i][j] == 'O') {
             printf("Error!\n");
             continue;
         }
