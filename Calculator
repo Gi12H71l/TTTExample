@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    char op;
+    double num1, num2, result;
+
+    // 1. Введення математичного оператора
+    printf("Введіть математичний оператор (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    // 2. Введення двох чисел
+    printf("Введіть два числа (через пробіл): ");
+    scanf("%lf %lf", &num1, &num2);
+
+    // 3. Вибір дії залежно від оператора (switch-case)
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
+            break;
+
+        case '*':
+            result = num1 * num2;
+            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
+            break;
+
+        case '/':
+            // Перевірка ділення на нуль (як на блок-схемі)
+            if (num2 == 0) {
+                printf("Помилка! Ділення на нуль неможливое.\n");
+            } else {
+                result = num1 / num2;
+                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
+            }
+            break;
+
+        default:
+            // Непідтримуваний оператор
+            printf("Помилка! Введено непідтримуваний оператор.\n");
+            break;
+    }
+
+    return 0;
+}
